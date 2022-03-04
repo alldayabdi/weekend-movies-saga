@@ -20,7 +20,7 @@ For this weekend challenge you'll be expanding on a movie management application
 
 ## Install Dependencies
 
-1. `npm install`
+1. `npm install` 
 2. `npm run server`
 3. `npm run client`
 
