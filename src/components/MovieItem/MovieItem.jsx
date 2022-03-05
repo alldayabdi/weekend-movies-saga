@@ -7,13 +7,20 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
 function MovieItem ({movie}){
+
+    function handleClick(id){
+        dispatch({ type: 'FETCH_DETAILS', payload: id });
+    }
     return (
         <>
-          <Card sx={{ maxWidth: 250 }}>
+        
+          <Card 
+           onClick={() => handleClick(movie.id)} key={movie.id}
+          sx={{ maxWidth: 250 }}>
             <CardMedia
                 component="img"
                 alt={movie.title}
-                height="150"
+                height="170"
                 image={movie.poster}
             />
             <CardContent>
