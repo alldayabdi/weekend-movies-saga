@@ -10,6 +10,7 @@ import Paper from '@mui/material/Paper';
 import ImageListItem from '@mui/material/ImageListItem';
 
 
+
 function MovieItem ({movie}){
 
     const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function MovieItem ({movie}){
     
     return (
         <>
-        <ImageListItem>
+       
           <Card 
           onClick={() => handleClick(movie.id)}
             key={movie.id}
@@ -47,7 +48,8 @@ function MovieItem ({movie}){
                 </Typography>
             </CardContent>
         </Card>
-        </ImageListItem>
+        
+        
         
 
         </>
