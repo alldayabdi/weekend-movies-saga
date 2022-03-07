@@ -8,14 +8,12 @@ import Typography from '@mui/material/Typography';
 
 function MovieItem ({movie}){
 
-    function handleClick(id){
-        dispatch({ type: 'FETCH_DETAILS', payload: id });
-    }
+    
     return (
         <>
         
           <Card 
-           onClick={() => handleClick(movie.id)} key={movie.id}
+            key={movie.id}
           sx={{ maxWidth: 250 }}>
             <CardMedia
                 component="img"

@@ -15,11 +15,9 @@ router.get('/', (req, res) => {
     })
 
 });
-
 router.get('/:id', (req, res) => {
-  
   console.log('getting movie details for movie', req.params.id);
-  const sqlText = `SELECT "movies".title, "movies".poster, "movies".description FROM "movies"
+  const sqlText = `SELECT "movies".title, "movies".poster, "movies".description, STRING_AGG("genres".name, ', ') AS "genres" FROM "movies"
   JOIN "movies_genres" ON "movies".id = "movies_genres".id
   JOIN "genres" ON "movies_genres".genre_id = "genres".id
   WHERE "movies".id = $1
@@ -32,7 +30,7 @@ router.get('/:id', (req, res) => {
           res.sendStatus(500);
   });
 
-
+})
 
 router.post('/', (req, res) => {
   console.log(req.body);
@@ -70,5 +68,7 @@ router.post('/', (req, res) => {
     res.sendStatus(500)
   })
 })
+
+
 
 module.exports = router;
