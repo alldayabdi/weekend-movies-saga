@@ -6,6 +6,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { useHistory } from 'react-router-dom'; 
 import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import ImageListItem from '@mui/material/ImageListItem';
+
 
 function MovieItem ({movie}){
 
@@ -27,7 +30,7 @@ function MovieItem ({movie}){
     
     return (
         <>
-        
+        <ImageListItem>
           <Card 
           onClick={() => handleClick(movie.id)}
             key={movie.id}
@@ -44,6 +47,7 @@ function MovieItem ({movie}){
                 </Typography>
             </CardContent>
         </Card>
+        </ImageListItem>
         
 
         </>
